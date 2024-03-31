@@ -1,40 +1,13 @@
 cmake_minimum_required(VERSION 3.10.2)
 
-project(planning)
+project(planning
+    VERSION 0.0.1
+    DESCRIPTION "learn")
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(Process_Dir ${CMAKE_SOURCE_DIR}/src/process)
+set(Pnc_Map_Dir ${CMAKE_SOURCE_DIR}/src/pnc_map)
 
-aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_LISTS)#huo qu suoyou cpp wenjian
-
-add_library(common #JIANG .CC WENJIAN SHENGCHENG DONGTAIKU
-SHARED
-${SRC_LISTS}
-
-)
-
-target_include_directories(common
-PUBLIC
-${PROJECT_SOURCE_DIR}/include
-)
-
-
-
-SET(EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/bin)
- 
-
-add_executable(planning_main planning_main.cc) #shengcheng kezhixing wwenjian
-
-target_include_directories(planning_main
-PUBLIC
-${PROJECT_SOURCE_DIR}/include
-)
-
-target_link_libraries(planning_main
-PUBLIC
-common
-)
-
-
-
+add_subdirectory(src)
