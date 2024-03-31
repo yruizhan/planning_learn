@@ -6,7 +6,7 @@ project(planning
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 set(Process_Dir ${CMAKE_SOURCE_DIR}/src/process)
 set(Pnc_Map_Dir ${CMAKE_SOURCE_DIR}/src/pnc_map)
 

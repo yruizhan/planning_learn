@@ -1,7 +1,7 @@
 project(process)
 
 add_library(${PROJECT_NAME} SHARED
-process.cpp
+process.cc
 )
 
 

@@ -6,7 +6,7 @@ project(planning_main)
 add_subdirectory(pnc_map)
 add_subdirectory(process)
 
-add_executable(${PROJECT_NAME} planning_main.cpp)
+add_executable(${PROJECT_NAME} planning_main.cc)
 
 target_include_directories(${PROJECT_NAME}
 PUBLIC
