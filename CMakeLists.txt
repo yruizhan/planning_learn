@@ -5,17 +5,18 @@ project(planning
     DESCRIPTION "learn")
 
 set(CMAKE_CXX_STANDARD 17)
+enable_testing()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 set(Process_Dir ${CMAKE_SOURCE_DIR}/src/process)
 set(Pnc_Map_Dir ${CMAKE_SOURCE_DIR}/src/pnc_map)
 
-add_subdirectory(src)
+
 
 #三方库
 find_package(Eigen3 3.4 REQUIRED)
 set(EIGEN3_INCLUDE_DIR /usr/local/include/eigen3)
-set(Eigen3_DIR ${EIGEN3_INCLUDE_DIR}/cmake)
+# set(Eigen3_DIR ${EIGEN3_INCLUDE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${EIGEN3_INCLUDE_DIR}/cmake)
 message("CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 
@@ -28,3 +29,6 @@ endif()
 
 get_target_property(Eigen3_INCLUDE_DIR Eigen3::Eigen INTERFACE_INCLUDE_DIRECTORIES)
 message("Eigen3_INCLUDE_DIR = ${Eigen3_INCLUDE_DIR}")
+
+add_subdirectory(src)
+add_subdirectory(test/map_test)
